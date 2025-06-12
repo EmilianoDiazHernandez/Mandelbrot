@@ -1,0 +1,37 @@
+# Compilación
+mandelbrot
+*.o
+*.out
+*.exe
+
+# VSCode settings
+.vscode/
+
+# Archivos temporales
+*~
+*.swp
+*.bak# Binarios ejecutables
+mandelbrot
+*.out
+*.exe
+
+# Objetos intermedios
+*.o
+*.obj
+
+# VSCode
+.vscode/
+
+# Archivos temporales comunes
+*~
+*.swp
+*.bak
+*.tmp
+.DS_Store
+
+*.tmp
+
+# Archivos de sistema
+.DS_Store
+Thumbs.db
+ehthumbs.db
