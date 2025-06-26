@@ -38,11 +38,11 @@ int main(int argc, char *argv[]) {
         {
             switch (event.type)
             {
-                case SDL_QUIT:
+                case SDL_QUIT: // End the program
                     running = false;
                     break;
 
-                case SDL_MOUSEMOTION:
+                case SDL_MOUSEMOTION: // Set the zoom coords
                     SDL_GetMouseState(&mouse_x, &mouse_y);
                     break;
 
@@ -50,16 +50,34 @@ int main(int argc, char *argv[]) {
                     {
                         switch (event.key.keysym.sym)
                         {
-                            case SDLK_ESCAPE:
+                            case SDLK_ESCAPE: // End the program
                                 running = false;
                                 break;
 
-                            case SDLK_PLUS:
+                            case SDLK_u: // Increase the iteration by 1?
+                                vp.max_iter += 1;
+                                needs_redraw = true;
+                                break;
+
+                            case SDLK_i: // Decrease the iteration by 1?
+                                vp.max_iter += 1;
+                                needs_redraw = true;
+                                break;
+
+                            case SDLK_s: // Set the iteration to 1
+                                vp.max_iter = 1;
+
+                            case SDLK_r: // Reestart default iterations 500
+                                vp.max_iter = 500;
+                                needs_redraw = true;
+                                break;
+
+                            case SDLK_PLUS: // Zoom in
                                 zoom_viewport(&vp, mouse_x, mouse_y, width, height, 1.2);
                                 needs_redraw = true;
                                 break;
 
-                            case SDLK_MINUS:
+                            case SDLK_MINUS: // Zoom out
                                 zoom_viewport(&vp, mouse_x, mouse_y, width, height, 0.8);
                                 needs_redraw = true;
                                 break;
