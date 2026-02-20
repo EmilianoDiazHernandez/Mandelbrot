@@ -1,6 +1,6 @@
 CC = gcc
-CFLAGS = -Wall -std=c11 `sdl2-config --cflags`
-LDFLAGS = `sdl2-config --libs`
+CFLAGS = -Wall -std=c11 -O3 -fopenmp `sdl2-config --cflags`
+LDFLAGS = `sdl2-config --libs` -lm -fopenmp
 
 SRC = main.c mandelbrot.c render.c
 OBJ = $(SRC:.c=.o)
